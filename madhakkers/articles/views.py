@@ -4,6 +4,11 @@ from django.template import loader
 import nltk
 from newspaper import Article
 
+def real(request):
+    template = loader.get_template('articles/real.css')
+    context = {'articles' : gen_str()}
+    return HttpResponse(template.render(context, request))
+
 def index(request):
     template = loader.get_template('articles/index.html')
     context = {'articles' : gen_str()}
@@ -47,11 +52,11 @@ def gen_str():
         out_dict[index] = artc
         index += 1
         # out_str += "{'title':%s, 'url':%s, 'risk_level':%d, 'tags',%s" % (article.title, article.url, article.risk_level, article.tags)
-
+        
     # return out_str
     return out_dict
 
-
+    
 class Analyzed_Art:
     """
     Documentation lol

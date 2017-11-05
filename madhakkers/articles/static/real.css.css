@@ -41,15 +41,3 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: 700;
 }
-#unresolved-2
-{
-  float: right;
-}
-#resolved-2
-{
-  float: left;
-}
-#topbar
-{
-  color: white;
-}
