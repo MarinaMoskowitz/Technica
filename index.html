@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+  <head>
+  <title> Mad Hackkers </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="/real.css"/>
+  </head>
+
+<body>
+<style>
+body
+{
+  background-color: #E5E4E2;
+}
+#resolved{
+  background-color: #ff99cf;
+  width: 250px;
+  length: 250px;
+  border-radius: 25px;
+  padding: 20px;
+}
+#unresolved{
+  background-color: #14c4ff;
+  width: 250px;
+  length: 250px;
+  border-radius: 25px;
+  padding: 20px;
+}
+#header{
+	background-size: 400% 400%;
+  width: 500;
+  length: 500;
+}
+.animate{
+  background: linear-gradient(270deg, #00ffff, #ff7bac);
+  -webkit-animation: GradientAnimation 10s ease infinite;
+  -moz-animation: GradientAnimation 10s ease infinite;
+  animation: GradientAnimation 10s ease infinite;
+}
+@-webkit-keyframes GradientAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes GradientAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes GradientAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DINPro-Bold', 'Helvetica', sans-serif ;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+  </style>
+  <div class="jumbotron animate" id="header">
+    <h1 class="display-3"><center><b> Mining Malware </b></center></h1>
+  <h6><center> Kelly E., Marina M., Sarrah R., Chanise T. </center></h6>
+  </div>
+</div>
+{% for key, article in articles.items %}
+  <div class= "container-fluid">
+      <ul class="list-unstyled" >
+        <li class="media">
+         <div class="media-body animate" id="resolved">
+            <h5 class="mt-0 mb-1">{{article.title}}</h5>
+            <a href={{article.url}}>{{article.url}}</a>
+			<h6>{{article.risk}}</h6>
+			<h6>{{article.tags}}</h6>
+          </div>
+		  </li>
+        </ul>
+      </div>
+	  {% endfor %}
+</body>
+</html>
