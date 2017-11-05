@@ -115,7 +115,7 @@ def calc_risk(self, keywords):
                     self.risk_level = self.risk_level + value
     
     
-    high_complexity_words = ['ransomware', 'aes', 'fileless', 'ecrypts', 'encrypt', 'encrypted', 'encryption', 'admin', 'root', 'unprivileged', 'ISO', 'TCP', 'boot', 'SSL', 'HTTPS', 'permission', 'remote', 'direct', 'application layer', 'transport layer', 'equifax']
+    high_complexity_words = ['trojan', 'ransomware', 'aes', 'fileless', 'ecrypts', 'encrypt', 'encrypted', 'encryption', 'admin', 'root', 'unprivileged', 'ISO', 'TCP', 'boot', 'SSL', 'HTTPS', 'permission', 'remote', 'direct', 'application layer', 'transport layer', 'equifax']
         self.risk_level = self.risk_level + (len(set(keywords) & set(high_complexity_words)) * 4)
         
         low_complexity_words = ['plain', 'public', 'upd', 'http']
@@ -123,4 +123,3 @@ def calc_risk(self, keywords):
 
 # attack_complexity = {word: 4 for word in high_complexity_words}
 # attack_complexity.update({word: 1 for word in low_complexity_words})
-
